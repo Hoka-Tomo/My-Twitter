@@ -261,6 +261,8 @@
     CGFloat cellHeight = sharedManager.marginY1 + tweetTextLabelHeight
     + sharedManager.marginY2 + sharedManager.nameLabelY + sharedManager.marginY3;
     return  cellHeight;
+    
+    
 }
 
 /*

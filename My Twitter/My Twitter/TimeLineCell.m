@@ -40,6 +40,9 @@
         _timeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _timeLabel.font = [UIFont systemFontOfSize:10.0f];
         _timeLabel.textColor = [UIColor grayColor];
+        
+        _timeLabel.textAlignment = NSTextAlignmentRight;
+
         //self.timeLabel.highlightedTextColor = [UIColor blueColor];
         [self.contentView addSubview:self.timeLabel];
         
@@ -78,11 +81,14 @@
     //                                           self.nameLabel.frame.origin.y + 10,
     //                                           tweetTextLabelX, self.tweetTextLabelHeight);
     
+    //CGRectMakeを使用し、引数には(位置ｘ, 位置y, 幅, 高さ)の順で指定
+    
     self.profileImageView.frame = CGRectMake(5,5,48,48);
-    self.tweetTextLabel.frame = CGRectMake(58, 23, 257, self.tweetTextLabelHeight);
-    self.nameLabel.frame = CGRectMake(58, 20, 257, 15);
+    self.tweetTextLabel.frame = CGRectMake(58, 28, 257, self.tweetTextLabelHeight);
+    self.nameLabel.frame = CGRectMake(58, 20, 230, 15);
     self.jnameLabel.frame = CGRectMake(58,6,257,15);
-    self.timeLabel.frame = CGRectMake(256, 3, 115, 15);
+    self.timeLabel.frame = CGRectMake(256, 3, 40, 15);
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

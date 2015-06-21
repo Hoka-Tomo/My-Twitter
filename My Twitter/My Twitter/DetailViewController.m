@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-//#import "UserViewController.h"
+#import "UserViewController.h"
 
 @interface DetailViewController ()
 
@@ -40,26 +40,28 @@
     self.textView.text = self.text;
     
     // ラベル(nameView)にタップするとアクションを起こせる機能をつけた。
+    
+    
     UITapGestureRecognizer *singleFingerSingleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleFingerSingleTap:)];
     [self.nameView addGestureRecognizer:singleFingerSingleTap];
     
 }
 
-//- (void)handleSingleFingerSingleTap:(UITapGestureRecognizer *)recognizer //外で実行
-//{
-//    UserViewController *userViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UserViewController"];
-//    userViewController.name = self.name;
-//    userViewController.text = self.jname;
-//    userViewController.text = self.text;
-//    userViewController.image = self.image;
-//    userViewController.identifier = self.identifier;
-//    //userViewController.idStr = self.timeLineData[indexPath.row][@"id_str"];
-//    
-//    [self.navigationController pushViewController:userViewController animated:YES];
-//    
-//    
-//    
-//}
+- (void)handleSingleFingerSingleTap:(UITapGestureRecognizer *)recognizer //外で実行
+{
+    UserViewController *userViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UserViewController"];
+    userViewController.name = self.name;
+    userViewController.text = self.jname;
+    userViewController.text = self.text;
+    userViewController.image = self.image;
+    userViewController.identifier = self.identifier;
+    //userViewController.idStr = self.timeLineData[indexPath.row][@"id_str"];
+    
+    [self.navigationController pushViewController:userViewController animated:YES];
+    
+    
+    
+}
 
 
 - (void)didReceiveMemoryWarning
