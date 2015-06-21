@@ -84,10 +84,10 @@
     //CGRectMakeを使用し、引数には(位置ｘ, 位置y, 幅, 高さ)の順で指定
     
     self.profileImageView.frame = CGRectMake(5,5,48,48);
-    self.tweetTextLabel.frame = CGRectMake(58, 28, 257, self.tweetTextLabelHeight);
+    self.tweetTextLabel.frame = CGRectMake(58, 28, 295, self.tweetTextLabelHeight);
     self.nameLabel.frame = CGRectMake(58, 20, 230, 15);
     self.jnameLabel.frame = CGRectMake(58,6,257,15);
-    self.timeLabel.frame = CGRectMake(256, 3, 40, 15);
+    self.timeLabel.frame = CGRectMake(256, 3, 115, 15);
     
 }
 

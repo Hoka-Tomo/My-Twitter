@@ -15,6 +15,7 @@ UITableViewDelegate
 >
 
 @property (weak, nonatomic) IBOutlet UITextView *nameView;
+@property (weak, nonatomic) IBOutlet UITextView *jnameView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
@@ -45,7 +46,7 @@ UITableViewDelegate
     
     self.navigationItem.title = @"User View";
     self.profileImageView.image = self.image;
-    self.nameView.text = self.jname;
+    self.jnameView.text = self.jname;
     self.nameView.text = self.name;
     
     // Uncomment the following line to preserve selection between presentations.
@@ -84,7 +85,9 @@ UITableViewDelegate
                   @"/1.1/statuses/user_timeline.json"];
     NSDictionary *params = @{@"count" : @"100",
                              @"trim_user" : @"0",
-                             @"include_entities" : @"0"};
+                             @"include_entities" : @"0",
+                             @"screen_name" : self.name
+                            };
     
     SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
                                             requestMethod:SLRequestMethodGET

@@ -12,6 +12,7 @@
 @interface DetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *nameView;
+@property (weak, nonatomic) IBOutlet UITextView *jnameView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (nonatomic, copy) NSString *httpErrorMessage;
@@ -36,14 +37,15 @@
     self.navigationItem.title = @"Detail View";
     self.profileImageView.image = self.image;
     self.nameView.text = self.name;
-    self.nameView.text = self.jname;
+    self.jnameView.text = self.jname;
     self.textView.text = self.text;
     
     // ラベル(nameView)にタップするとアクションを起こせる機能をつけた。
     
-    
     UITapGestureRecognizer *singleFingerSingleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleFingerSingleTap:)];
+    [self.jnameView addGestureRecognizer:singleFingerSingleTap];
     [self.nameView addGestureRecognizer:singleFingerSingleTap];
+    
     
 }
 
@@ -51,7 +53,7 @@
 {
     UserViewController *userViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UserViewController"];
     userViewController.name = self.name;
-    userViewController.text = self.jname;
+    userViewController.jname = self.jname;
     userViewController.text = self.text;
     userViewController.image = self.image;
     userViewController.identifier = self.identifier;
