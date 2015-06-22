@@ -276,4 +276,21 @@ UITableViewDelegate
  }
  */
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TimeLineCell *cell = (TimeLineCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    detailViewController.name = cell.nameLabel.text;
+    detailViewController.jname = cell.jnameLabel.text;
+    detailViewController.time = cell.timeLabel.text;
+    detailViewController.text = cell.tweetTextLabel.text;
+    detailViewController.image = cell.profileImageView.image;
+    detailViewController.identifier = self.identifier;
+    detailViewController.idStr = self.timeLineData[indexPath.row][@"id_str"];
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+
 @end

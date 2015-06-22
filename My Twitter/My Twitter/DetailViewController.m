@@ -44,8 +44,8 @@
     
     UITapGestureRecognizer *singleFingerSingleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleFingerSingleTap:)];
     [self.jnameView addGestureRecognizer:singleFingerSingleTap];
-    [self.nameView addGestureRecognizer:singleFingerSingleTap];
     
+    [self.nameView addGestureRecognizer:singleFingerSingleTap];
     
 }
 
