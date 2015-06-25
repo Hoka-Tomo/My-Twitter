@@ -74,11 +74,19 @@
         <scene sceneID="Hax-n1-lcW">
             <objects>
                 <tableViewController id="Ls6-gO-bns" customClass="TimeLineTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SIq-QD-vOu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SIq-QD-vOu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="sv8-n9-0nK">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="SIq-QD-vOu" id="IAz-DW-egu"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vgz-Fh-jYk">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -93,8 +101,20 @@
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="zgM-OY-HMD" id="XSn-BJ-xgj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFM-0C-Qei" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="zgM-OY-HMD">
+                    <connections>
+                        <outlet property="delegate" destination="Ls6-gO-bns" id="6xI-YF-wDF"/>
+                        <outlet property="searchBar" destination="sv8-n9-0nK" id="E1W-AG-ba3"/>
+                        <outlet property="searchContentsController" destination="Ls6-gO-bns" id="2Dp-QD-vwb"/>
+                        <outlet property="searchResultsDataSource" destination="Ls6-gO-bns" id="IaA-p3-xmT"/>
+                        <outlet property="searchResultsDelegate" destination="Ls6-gO-bns" id="ceh-YT-dyu"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1530.5" y="150.5"/>
         </scene>
@@ -157,7 +177,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bbb" translatesAutoresizingMaskIntoConstraints="NO" id="8y7-TB-ntH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="penView" image="bbb" translatesAutoresizingMaskIntoConstraints="NO" id="8y7-TB-ntH">
                                 <rect key="frame" x="293" y="586" width="72" height="73"/>
                             </imageView>
                         </subviews>
@@ -167,6 +187,7 @@
                     <connections>
                         <outlet property="jnameView" destination="R9t-wZ-qdc" id="PiX-bY-9fM"/>
                         <outlet property="nameView" destination="LY5-ZJ-KRq" id="NC7-VF-uBq"/>
+                        <outlet property="penView" destination="8y7-TB-ntH" id="EZa-Oe-lR3"/>
                         <outlet property="profileImageView" destination="771-uq-oJB" id="T0n-33-dA2"/>
                         <outlet property="textView" destination="bYB-se-Q5q" id="Eo1-Zx-3Uv"/>
                     </connections>

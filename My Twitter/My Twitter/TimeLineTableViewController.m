@@ -42,7 +42,6 @@
     
     self.mainQueue = dispatch_get_main_queue();
     self.imageQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
-    self.navigationItem.title = @"Time Line";
     
     // iOS6以降のセル再利用のパターン
     [self.tableView registerClass:[TimeLineCell class] forCellReuseIdentifier:@"TimeLineCell"];

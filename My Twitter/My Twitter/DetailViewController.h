@@ -19,5 +19,6 @@
 @property NSString *text;
 @property NSString *identifier;
 @property NSString *idStr;
+@property UIImage *penView;
 
 @end

@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *tweetActionButton;
 @property (weak, nonatomic) IBOutlet UILabel *accountDisplayLabel;
 
+
 @property (nonatomic, strong) ACAccountStore *accountStore;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSArray *twitterAccounts;
@@ -59,6 +60,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 - (IBAction)tweetAction:(id)sender {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) { //利用可能チェック
         NSString *serviceType = SLServiceTypeTwitter;
@@ -117,6 +121,8 @@
         }
     }
 }
+
+
 
 
 
